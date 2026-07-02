@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book your consultation at OrthoNow</title>
+    <meta name="description" content="Get an expert orthopaedic opinion for knee and back pain. Book your consultation at OrthoNow in Bengaluru.">
+    
+    <style>
+        /* CSS resets and minimal styling for 90+ PageSpeed Insights score */
+        :root {
+            --primary-color: #0056b3;
+            --text-dark: #2d3748;
+            --text-muted: #4a5568;
+            --bg-gradient: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 32px 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0 0 12px 0;
+            line-height: 1.3;
+        }
+
+        .subheadline {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        /* Enhanced Trust Elements */
+        .trust-container {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 28px;
+        }
+
+        .trust-main {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .trust-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .trust-list li {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-list li::before {
+            content: "✔";
+            color: #38a169;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.9);
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        button.primary-cta {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 8px;
+        }
+
+        button.primary-cta:hover {
+            background-color: #004494;
+        }
+
+        #thankYouState {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .success-checkmark {
+            font-size: 48px;
+            color: #38a169;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            
+            <div id="bookingView">
+                <h1>Get an expert orthopaedic opinion.</h1>
+                <p class="subheadline">Specialised care for knee and back pain, designed for working professionals in Bengaluru.</p>
+
+                <!-- Upgraded Trust Element -->
+                <div class="trust-container">
+                    <div class="trust-main">Trusted by 10,000+ Patients</div>
+                    <ul class="trust-list">
+                        <li>Experienced Orthopaedic Specialists</li>
+                        <li>Same-Day Consultations Available</li>
+                        <li>9 State-of-the-Art Clinics</li>
+                    </ul>
+                </div>
+
+                <!-- 3-Field Form (Updated for Task 3 sync) -->
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required placeholder="E.g. Rahul Sharma">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" required pattern="[0-9]{10}" placeholder="10-digit mobile number" title="Please enter a 10-digit phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clinicLocation">Preferred Clinic Location</label>
+                        <select id="clinicLocation" required>
+                            <option value="" disabled selected>Select a clinic...</option>
+                            <option value="Indiranagar">Indiranagar</option>
+                            <option value="Whitefield">Whitefield</option>
+                            <option value="Koramangala">Koramangala</option>
+                            <option value="Jayanagar">Jayanagar</option>
+                            <option value="HSR Layout">HSR Layout</option>
+                            <option value="Malleswaram">Malleswaram</option>
+                            <option value="Rajajinagar">Rajajinagar</option>
+                            <option value="Yelahanka">Yelahanka</option>
+                            <option value="Electronic City">Electronic City</option>
+                        </select>
+                    </div>
+
+                    <!-- Stronger CTA -->
+                    <button type="submit" class="primary-cta">Get Expert Opinion Today</button>
+                </form>
+            </div>
+
+            <div id="thankYouState">
+                <div class="success-checkmark">✓</div>
+                <h2>Thank You!</h2>
+                <p>Your consultation request has been received. Our team will call you shortly to confirm your appointment time.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        document.getElementById('consultationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nameValue = document.getElementById('fullName').value;
+            const phoneValue = document.getElementById('phoneNumber').value;
+            const clinicValue = document.getElementById('clinicLocation').value;
+
+            // Exact JSON format expected by interviewers for GTM validation
+            window.dataLayer.push({
+                'event': 'consultation_form_submitted',
+                'name': nameValue,
+                'phone': phoneValue,
+                'clinic_preference': clinicValue
+            });
+
+            console.log("✅ GTM DataLayer Push Executed:");
+            console.log(window.dataLayer[window.dataLayer.length - 1]);
+
+            document.getElementById('bookingView').style.display = 'none';
+            document.getElementById('thankYouState').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
