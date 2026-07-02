@@ -31,3 +31,34 @@ GTM cannot natively listen to multi-step form interactions reliably. The front-e
   "clinic_location": "Indiranagar",
   "specialty": "Knee Replacement"
 }
+
+Step 2: Patient Details Entered
+
+{
+  "event": "booking_step_complete",
+  "step_number": 2,
+  "step_name": "patient_details_entered",
+  "preferred_date": "2026-07-15",
+  "lead_type": "new_patient",
+  "clinic_location": "Indiranagar"
+}
+
+Step 3: Booking Confirmed
+
+{
+  "event": "booking_step_complete",
+  "step_number": 3,
+  "step_name": "booking_confirmed",
+  "booking_id": "ON-98765",
+  "specialty": "Knee Replacement",
+  "clinic_location": "Indiranagar"
+}
+
+Surfacing in GA4:
+To visualize drop-off, I would create a Funnel Exploration report in GA4.
+
+Step 1 Condition: Include event booking_step_complete where step_number exactly matches 1.
+
+Step 2 Condition: Include event booking_step_complete where step_number exactly matches 2.
+
+Step 3 Condition: Include event booking_step_complete where step_number exactly matches 3.
