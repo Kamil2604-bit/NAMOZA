@@ -2,7 +2,7 @@
 
 **Candidate:** Mohd Kamil
 **Role:** Developer - Position 1 (Client Web + Martech)
-**Loom Walkthrough:** [Insert your Loom video link here]
+**Loom Walkthrough:** [https://www.loom.com/share/269d11d08f4c4ada9d0441c16e5d9f8d]
 
 ---
 
